@@ -1,0 +1,62 @@
+.image-scroller {
+    margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scroller-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    margin-bottom: -5px; /* Adjusted to account for potential line height variation */
+}
+
+.product {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Adjust the margin between products */
+}
+
+.product img {
+    width: 100%;
+    display: block;
+    height: 350px;
+    width: 300px;
+}
+
+.product-details {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.star-rating {
+    color: black; /* Adjust the color of the stars */
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
+    color: white;
+    border: 1px solid black; /* Add a 1px black border */
+    padding: 10px;   
+    cursor: pointer;
+    font-size: 18px;
+    width: 30px; /* Set the width for square shape */
+    height: 30px; /* Set the height for square shape */
+    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; /* Adjust border radius as needed */
+}
+
+.next-button {
+    right: 2px; /* Adjust the right position as needed */
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: #008892; /* Change the hover background color */
+}
+

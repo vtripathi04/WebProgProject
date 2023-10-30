@@ -1,0 +1,224 @@
+/* For the header and general style of page */
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Montserrat:wght@500&family=Poppins:wght@300;400;500&display=swap');
+
+
+
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+header li,
+a,
+button {
+
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+
+}
+
+#cart-icon {
+
+    height: 30px;
+    width: 50px;
+
+}
+
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%
+}
+
+
+
+.logo {
+    cursor: pointer;
+    /* margin-right: auto; */
+    height: 45px;
+    width: 150px;
+
+}
+
+
+.nav_links {
+    list-style: none;
+}
+
+
+.nav_links li {
+
+    display: inline-block;
+    padding: 0px 20px;
+
+}
+
+
+.nav_links li a {
+
+    transition: all 0.3s ease 0s;
+
+}
+
+
+.nav_links li a:hover {
+
+    color: lightgray;
+
+}
+
+
+button {
+
+    padding: 9px 25px;
+    margin-left: 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+
+header button {
+    background-color: lightblue;
+
+}
+
+header button:hover {
+
+    background-color: lightgray;
+
+}
+
+
+
+header {
+
+    background-color: white;
+
+}
+
+
+.header-seperator {
+
+    border: none;
+    border-top: 3px dotted lightgrey;
+    margin: 0;
+    clear: both;
+
+}
+
+
+
+
+/* For the main catalogue */
+
+.catalog-page {
+    margin: 20px 5%;
+
+}
+
+
+.page-heading {
+    text-align: center;
+    margin-top: 320x;
+    font-size: 40px;
+    font-weight: 20px;
+    font-family: "Montserrat";
+}
+
+
+.page-subheading {
+
+    text-align: center;
+    color: grey;
+    margin: 15px;
+    margin-bottom: 30px;
+
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-radius: 20px;
+}
+
+.product {
+    /* 25% width with 20px gap between products */
+    /* width: calc(25% - 20px);  */
+    background-color: #fff;
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    /* transition: box-shadow 0.3s ease; */
+    transition: all 0.3s;
+    position: relative;
+
+}
+
+
+.product:hover {
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.116);
+    scale: 1.03;
+}
+
+.mpimg {
+    /* width: 100%; */
+    min-width: 280px;
+    height: 350px;
+    /* height: 300px; */
+    cursor: pointer;
+
+}
+
+.product-details {
+    text-align: left;
+    height: 100px;
+}
+
+.brand-name {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.product-name {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+
+.star-rating {
+    color: #ffa500;
+    /* Adjust the color of the stars */
+    /* position: absolute;
+    bottom: 15px; */
+    text-align: right;
+}
+
+/* Your existing styles */
