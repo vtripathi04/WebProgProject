@@ -105,12 +105,13 @@ router.get('/mensection', (req, res) => {
             
                     <nav>
                         <ul class="nav_links">
-                            <li><a href="#">Men</a></li>
-                            <li><a href="/womensection">Women</a></li>
-                            <li><a href="#">Kids</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Cart</a></li>
+                            <li> <a href="./mensection">Men</a></li>
+                            <li> <a href="./womensection">Women</a></li>
+                            <li> <a href="./kids">Kids</a></li>
+                            <li> <a href="./acc">Accessories</a></li>
+                            <li> <a href="#">About</a></li>
+                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
             
@@ -215,12 +216,13 @@ router.get('/womensection', (req, res) => {
             
                     <nav>
                         <ul class="nav_links">
-                            <li><a href="/mensection">Men</a></li>
-                            <li><a href="#">Women</a></li>
-                            <li><a href="#">Kids</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Cart</a></li>
+                            <li> <a href="./mensection">Men</a></li>
+                            <li> <a href="./womensection">Women</a></li>
+                            <li> <a href="./kids">Kids</a></li>
+                            <li> <a href="./acc">Accessories</a></li>
+                            <li> <a href="#">About</a></li>
+                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
             
@@ -306,8 +308,7 @@ router.get('/kids', (req, res) => {
             </div>
             </div>
         
-            
-            `);
+            `).join('');
 
             html = `
 
@@ -331,12 +332,13 @@ router.get('/kids', (req, res) => {
 
                     <nav>
                         <ul class="nav_links">
-                            <li><a href="/mensection">Men</a></li>
-                            <li><a href="/womensection">Women</a></li>
-                            <li><a href="#">Kids</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Cart</a></li>
+                            <li> <a href="./mensection">Men</a></li>
+                            <li> <a href="./womensection">Women</a></li>
+                            <li> <a href="./kids">Kids</a></li>
+                            <li> <a href="./acc">Accessories</a></li>
+                            <li> <a href="#">About</a></li>
+                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
 
@@ -373,7 +375,15 @@ router.get('/kids', (req, res) => {
             </html>
             `;
 
-            res.send(html);
+            // res.send(html);
+
+            // Save the generated HTML to a file
+            const filePath = path.join('C:/Users/Rituparna/OneDrive/Desktop/College 2nd Year/Web Prog/Final Project', 'public', 'kidsection.html');
+            fs.writeFileSync(filePath, html);
+
+            // Respond with the file
+            res.sendFile(filePath);
+
             
 
         }
@@ -383,6 +393,122 @@ router.get('/kids', (req, res) => {
 });
 
 
+
+
+// Router for the accessories section
+
+
+router.get('/acc', (req, res) => {
+
+    const query = 'SELECT * FROM accessories';
+
+    connection.query(query, (err, results) => {
+        if (err) {
+            console.error('Error fetching products:', err);
+            res.status(500).send('Error fetching products.');
+        } else {
+
+            // get star ratings for every product
+
+            var starray = getStarArr(results);
+            var starind = 0;
+
+
+            prodHTML = results.map(product => `
+
+            <div class="product" id="${product.id}">
+            <img src="${product.product_image}" alt="Pink foil print kurta" class="mpimg" data-product-id="${product.id}">
+            <div class="product-details">
+                <p class="brand-name">${product.product_brand}</p>
+                <h3 class="product-name">${product.product_title}</h3>
+                <p class="price">${product.product_price}</p>
+                <div class="star-rating">${starray[starind++]}</div>
+            </div>
+            </div>
+        
+            `).join('');
+
+            html = `
+
+                
+            <!DOCTYPE html>
+            <html lang="en">
+
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="./css/style.css">
+                <link rel="stylesheet" href="./css/mensclothes.css">
+                <script src="./javascript/elproductpage.js"></script>
+                <title>Accessories Catalogue</title>
+            </head>
+
+            <body>
+
+                <header>
+                    <a href="index.html"><img class="logo" src="./images/final-logo.png"></a>
+
+                    <nav>
+                        <ul class="nav_links">
+                            <li> <a href="./mensection">Men</a></li>
+                            <li> <a href="./womensection">Women</a></li>
+                            <li> <a href="./kids">Kids</a></li>
+                            <li> <a href="./acc">Accessories</a></li>
+                            <li> <a href="#">About</a></li>
+                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./login">Login</a></li>
+                        </ul>
+                    </nav>
+
+                    <a class="cta" href="#"> 
+                    <button>Contact</button></a>
+                </header>
+
+                <hr class="header-seperator">
+
+                <div class="catalog-page">
+                    <h2 class="page-heading">Accessories Section</h2>
+                    <p class="page-subheading"> Premium Accessory Collection for All. </p> 
+                    <br>
+
+                    <div class="product-container">
+
+                            ${prodHTML}
+
+                    </div>
+                </div>
+
+                <footer>
+                    <!-- Footer content (as in the previous example) -->
+                </footer>
+
+                <hr class="footer-sep">
+
+                <div class="copyright">
+                    <!-- Copyright content (as in the previous example) -->
+                </div>
+
+            </body>
+
+            </html>
+            `;
+
+            // res.send(html);
+
+            // Save the generated HTML to a file
+            const filePath = path.join('C:/Users/Rituparna/OneDrive/Desktop/College 2nd Year/Web Prog/Final Project', 'public', 'accsection.html');
+            fs.writeFileSync(filePath, html);
+
+            // Respond with the file
+            res.sendFile(filePath);
+
+            
+
+        }
+        
+    });
+
+});
 
 
 

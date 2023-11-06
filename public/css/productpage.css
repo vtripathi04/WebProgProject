@@ -87,3 +87,30 @@ body {
         max-width: 100%;
     }
 }
+
+#buyNowButton {
+    margin-top: 75px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+
+#buyNowButton:hover {
+    background-color: black;
+    color: white;
+}
+
+#addtocartButton {
+
+    margin-top: 10px;
+    width: 150px;
+
+}
+
+
+#addtocartButton:hover {
+
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+}

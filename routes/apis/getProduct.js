@@ -35,6 +35,8 @@ function getProductQuery(prodid){
         return `SELECT * from womensproducts where id='${prodid}'`;
     } else if (prodid.includes("KP")){
         return `SELECT * from kidsproducts where id='${prodid}'`;
+    } else if (prodid.includes("AP")) {
+        return `SELECT * from accessories where id='${prodid}'`;
     }
 
 }
@@ -89,7 +91,10 @@ router.get('/productId=:productId',(req,res) => {
                         <li>${product.pd4}</li>
                     </ul>
                     </div>
+                    <button id="buyNowButton"> Buy Now </button>
+                    <button id="addtocartButton"> Add to Cart </button>
                 </div>
+
                 </div>
             </div>
             `);

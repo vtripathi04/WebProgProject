@@ -4,6 +4,7 @@ const fetchProducts = require('./routes/apis/fetchProducts.js');
 const bodyParser = require('body-parser');
 const addProduct = require('./routes/apis/addProduct.js');
 const getProduct = require('./routes/apis/getProduct.js');
+const loginHandler = require('./routes/apis/loginHandler.js');
 const cors = require('cors'); // Import cors module
 
 
@@ -14,6 +15,7 @@ app.use(cors()); // Enable CORS
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', fetchProducts);
 app.use('/', getProduct)
+// app.use('/', loginHandler);
 // Parse JSON requests
 app.use(bodyParser.json());
 
@@ -35,6 +37,9 @@ app.get('/', (req, res) => {
 app.get('/mensection', fetchProducts);   
 app.get('/womensection', fetchProducts);
 app.get('/kids', fetchProducts);
+app.get('/acc', fetchProducts);
+app.get('/login', loginHandler);
+app.get('/success', loginHandler);
 
 
 
