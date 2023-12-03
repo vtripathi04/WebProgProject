@@ -1,30 +1,9 @@
 const express = require('express');
-const mysql2 = require('mysql2');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
+const connection = require('../../db'); // Import the database connection
 
-
-
-const connection = mysql2.createConnection({
-
-    host: 'localhost',
-    user: 'root',
-    password: 'noyarc',
-    database: 'clothondb'
-
-})
-
-
-connection.connect(err => {
-
-    if(err){
-        console.error('Error Connecting to the MySql : ', err)
-    }else{
-        console.log('Connected to MySql !')
-    }
-
-})
 
 
 function getStarArr(results){
@@ -109,14 +88,14 @@ router.get('/mensection', (req, res) => {
                             <li> <a href="./womensection">Women</a></li>
                             <li> <a href="./kids">Kids</a></li>
                             <li> <a href="./acc">Accessories</a></li>
-                            <li> <a href="#">About</a></li>
-                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./about">About</a></li>
+                            <li> <a href="./cart">Cart</a></li>
                             <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
             
-                    <a class="cta" href="#"> 
-                    <button>Contact</button></a>
+                    <a class="cta" href="./logout"> 
+                    <button>Logout</button></a>
                 </header>
             
                 <hr class="header-seperator">
@@ -220,14 +199,14 @@ router.get('/womensection', (req, res) => {
                             <li> <a href="./womensection">Women</a></li>
                             <li> <a href="./kids">Kids</a></li>
                             <li> <a href="./acc">Accessories</a></li>
-                            <li> <a href="#">About</a></li>
-                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./about">About</a></li>
+                            <li> <a href="./cart">Cart</a></li>
                             <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
             
-                    <a class="cta" href="#"> 
-                    <button>Contact</button></a>
+                    <a class="cta" href="./logout"> 
+                    <button>Logout</button></a>
                 </header>
             
                 <hr class="header-seperator">
@@ -336,14 +315,14 @@ router.get('/kids', (req, res) => {
                             <li> <a href="./womensection">Women</a></li>
                             <li> <a href="./kids">Kids</a></li>
                             <li> <a href="./acc">Accessories</a></li>
-                            <li> <a href="#">About</a></li>
-                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./about">About</a></li>
+                            <li> <a href="./cart">Cart</a></li>
                             <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
 
-                    <a class="cta" href="#"> 
-                    <button>Contact</button></a>
+                    <a class="cta" href="./logout"> 
+                    <button>Logout</button></a>
                 </header>
 
                 <hr class="header-seperator">
@@ -454,14 +433,14 @@ router.get('/acc', (req, res) => {
                             <li> <a href="./womensection">Women</a></li>
                             <li> <a href="./kids">Kids</a></li>
                             <li> <a href="./acc">Accessories</a></li>
-                            <li> <a href="#">About</a></li>
-                            <li> <a href="#">Cart</a></li>
+                            <li> <a href="./about">About</a></li>
+                            <li> <a href="./cart">Cart</a></li>
                             <li> <a href="./login">Login</a></li>
                         </ul>
                     </nav>
 
-                    <a class="cta" href="#"> 
-                    <button>Contact</button></a>
+                    <a class="cta" href="./logout"> 
+                    <button>Logout</button></a>
                 </header>
 
                 <hr class="header-seperator">

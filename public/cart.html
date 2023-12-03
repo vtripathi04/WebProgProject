@@ -1,0 +1,127 @@
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Bag - Cart</title>
+    
+        <link rel="stylesheet" href="css/cartstyle.css">
+        
+    </head>
+    <body>
+    
+        <header>
+            <a href="index.html"><img class="logo" src="./images/final-logo.png"></a>
+    
+            <nav>
+                <ul class="nav_links">
+    
+                    <li> <a href="./mensection">Men</a></li>
+                    <li> <a href="./womensection">Women</a></li>
+                    <li> <a href="./kids">Kids</a></li>
+                    <li> <a href="./acc">Accessories</a></li>
+                    <li> <a href="./about">About</a></li>
+                    <li> <a href="./cart">Cart</a></li>
+                    <li> <a href="./login">Login</a></li>
+                    
+                </ul>
+            </nav>
+    
+            <a class="cta" href="./logout"> <button>Logout</button></a>
+    
+        </header>
+    
+        <hr class="header-seperator">
+       
+    
+        <div class="cart-container">
+            <h2 class="cart-heading">aryu's Bag </h2>
+    
+    
+            <div class="cart-item-container">
+    
+    
+                <div class="cart-item" id="cart-items-heading">
+                    <h1>Cart Items :</h1>
+                </div>
+    
+                
+          <div class="cart-item" itemid="WP19">
+            <div class="item-details">
+                <img src="/images/womensprod19.jpg" alt="Product 1" class="product-image">
+                <div>
+                    <p>Sequin evening gown</p>
+                    <p>₹1999.00</p>
+                    <p>Quantity : 1</p>
+                </div>
+            </div>
+            <button class="delete-button">Delete</button>
+          </div>
+        
+          <div class="cart-item" itemid="AP15">
+            <div class="item-details">
+                <img src="/images/accprod15.jpg" alt="Product 1" class="product-image">
+                <div>
+                    <p>Watch</p>
+                    <p>₹1200.00</p>
+                    <p>Quantity : 1</p>
+                </div>
+            </div>
+            <button class="delete-button">Delete</button>
+          </div>
+        
+          <div class="cart-item" itemid="MP12">
+            <div class="item-details">
+                <img src="/images/mensprod12.jpg" alt="Product 1" class="product-image">
+                <div>
+                    <p>Bomber Jacket with Button</p>
+                    <p>₹2100.00</p>
+                    <p>Quantity : 1</p>
+                </div>
+            </div>
+            <button class="delete-button">Delete</button>
+          </div>
+        
+            </div>
+    
+            
+            <!-- Repeat the cart-item structure for each product -->
+    
+            <div class="order-details">
+                <h1> Cart Details :</h1>
+               
+                <!--
+                
+                <p>Sequin evening gown: ₹ NaN</p>
+            
+                <p>Watch: ₹ NaN</p>
+            
+                <p>Bomber Jacket with Button: ₹ NaN</p>
+            
+
+            -->
+
+              <p>Sequin evening gown: ₹1999.00</p>
+<p>Watch: ₹1200.00</p>
+<p>Bomber Jacket with Button: ₹2100.00</p>
+
+
+              <p class="total">Cart Total: ₹5299</p>
+
+                <button class="proceed-button" onclick="proceedToCheckout()">Proceed To Shipping</button>
+            </div>
+        </div>
+    
+        <script src="./javascript/deletefromcartPOST.js"></script>
+        <script>
+        function proceedToCheckout() {
+            // Redirect to the '/checkout' route
+            window.location.href = '/checkout';
+        }
+        </script>
+    </body>
+    </html>
+    
+    

@@ -1,0 +1,24 @@
+/* Include your existing CSS styles here */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Set a light background color */
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 50px auto; /* Center the content */
+    padding: 20px;
+    background-color: white; /* Set a white background for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.about-heading {
+    color: #333;
+    text-align: center; /* Center the heading */
+}
+
+.about-container p {
+    margin-bottom: 20px; /* Add space between paragraphs */
+}

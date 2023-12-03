@@ -1,29 +1,8 @@
 const express = require('express');
-const mysql2 = require('mysql2');
 const router = express.Router();
 const fs = require('fs');
 const path = require('path');
-
-
-const connection = mysql2.createConnection({
-
-    host: 'localhost',
-    user: 'root',
-    password: 'noyarc',
-    database: 'clothondb'
-
-})
-
-
-connection.connect(err => {
-
-    if(err){
-        console.error('Error Connecting to the MySql : ', err)
-    }else{
-        console.log('Connected to MySql !')
-    }
-
-})
+const connection = require('../../db'); // Import the database connection
 
 
 
@@ -73,7 +52,7 @@ router.get('/productId=:productId',(req,res) => {
 
 
             const prodDataHTML = results.map(product =>`
-            <div class="product-container">
+            <div class="product-container" id="${productId}">
                 <div id="product-info">
                 <img id="product-image" src="${product.product_image}" alt="Product Image">
                 <div id="product-details">
@@ -118,21 +97,22 @@ router.get('/productId=:productId',(req,res) => {
                 <nav>
                 <ul class="nav_links">
                     <li><a href="./mensection">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Kids</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a href="./womensection">Women</a></li>
+                    <li><a href="./kidsection">Kids</a></li>
+                    <li><a href="./acc">Accessories</a></li>
+                    <li><a href="./about">About</a></li>
+                    <li><a href="./cart">Cart</a></li>
+                    <li><a href="./login">Login</a></li>
                 </ul>
                 </nav>
-                <a class="cta" href="#"><button>Contact</button></a>
+                <a class="cta" href="/logout"><button>Logout</button></a>
             </header>
 
             <hr class="header-separator">
 
                 ${prodDataHTML}
 
-            <script src="product.js"></script>
+            <script src="./javascript/addtocartPOST.js"></script>
             </body>
             </html>
 

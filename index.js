@@ -16,7 +16,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', fetchProducts);
 app.use('/', getProduct)
 // app.use('/', loginHandler);
+
 // Parse JSON requests
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
@@ -39,7 +41,25 @@ app.get('/womensection', fetchProducts);
 app.get('/kids', fetchProducts);
 app.get('/acc', fetchProducts);
 app.get('/login', loginHandler);
+app.get('/register', loginHandler);
+app.post('/login', loginHandler);
+app.post('/register', loginHandler);
+app.get('/logout', loginHandler);
 app.get('/success', loginHandler);
+app.post('/addtocart', loginHandler);
+app.post('/removeFromCart', loginHandler);
+app.get('/cart', loginHandler);
+app.get('/checkout', loginHandler);
+
+
+// In your Express app
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+// app.get('/checkout', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'checkout.html'));
+// });
 
 
 

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Montserrat:wght@500&display=swap');
+
+
 .image-scroller {
     margin-top: 50px;
     position: relative;
@@ -20,6 +23,7 @@
     display: block;
     height: 350px;
     width: 300px;
+    border-radius: 98px;
 }
 
 .product-details {
